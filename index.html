@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7851d8">
+  <meta name="application-name" content="AprendeCSS">
+  <meta name="author" content="Robinson Andres Cortes">
+  <meta name="description" content="Aprende CSS experimentando. Una ruta en español de básico a avanzado, ejemplos editables, retos y una amplia referencia de propiedades.">
+  <title>AprendeCSS — Aprende haciendo</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237851d8'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='39' fill='white' font-family='monospace'%3E%7B%7D%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir al contenido</a>
+  <aside class="sidebar" id="sidebar" aria-label="Ruta de aprendizaje"></aside>
+  <div class="mobile-scrim" id="scrim"></div>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="topbar-left"><button class="icon-button mobile-menu" id="menu-button" aria-label="Abrir navegación"></button><span class="topbar-title">Tu espacio para aprender CSS</span><span class="version">DESDE CERO</span></div>
+      <div class="topbar-actions"><button class="search-trigger" id="search-trigger"><span class="search-icon"></span><span>Buscar un concepto...</span><kbd>Ctrl K</kbd></button><button class="icon-button" id="theme-button" aria-label="Cambiar tema"></button><div class="avatar" title="Tu aprendizaje, a tu ritmo">A</div></div>
+    </header>
+    <nav class="view-nav" aria-label="Secciones principales">
+      <div class="nav-tabs"><button data-view="learn" class="view-tab active">Aprender <span class="tab-dot"></span></button><button data-view="reference" class="view-tab">Referencia CSS <span class="reference-count">672</span></button><button data-view="playground" class="view-tab">Playground <span class="external-arrow">↗</span></button></div>
+      <span class="nav-note"><span></span> Aprende a tu ritmo</span>
+    </nav>
+    <main id="main" tabindex="-1"><section class="wide-page" id="startup-content"><p class="page-eyebrow">BIENVENIDO A AprendeCSS</p><h1>Aprende CSS<br><em>haciendo.</em></h1><p class="intro" id="startup-status" role="status">Preparando las lecciones y tu laboratorio. Conserva todos los archivos del sitio en la misma carpeta.</p><noscript><p class="intro">Activa JavaScript en tu navegador para usar los ejemplos editables. No necesitas instalar Node.js ni iniciar un servidor.</p></noscript></section></main>
+    <footer class="site-footer"><span><b>AprendeCSS</b> · Desarrollado por Robinson Andres Cortes.</span><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noreferrer">Sigue explorando en MDN ↗</a></footer>
+  </div>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Buscar en AprendeCSS"><div class="search-box"><span id="dialog-search-icon"></span><input id="global-search" placeholder="¿Qué quieres aprender hoy?" autocomplete="off" aria-label="Buscar lecciones y propiedades"><button class="key-button" id="close-search">Esc</button></div><div id="search-results" class="search-results"></div><div class="search-footer">Lecciones, propiedades, selectores y reglas CSS <span>↵ Abrir resultado</span></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    window.addEventListener('error', function (event) {
+      var status = document.getElementById('startup-status');
+      if (!status) return;
+      var source = event.target && event.target.tagName === 'SCRIPT' ? event.target.getAttribute('src') : '';
+      status.textContent = source
+        ? 'No se pudo cargar ' + source + '. Comprueba que copiaste todos los archivos del sitio junto a index.html y vuelve a abrirlo.'
+        : 'No se pudo iniciar el laboratorio. Vuelve a abrir index.html con todos los archivos del sitio en la misma carpeta.';
+    }, true);
+  </script>
+  <script defer src="./lessons.js"></script>
+  <script defer src="./descriptions.js"></script>
+  <script defer src="./catalogs.js"></script>
+  <script defer src="./reference.js"></script>
+  <script defer src="./app.js"></script>
+</body>
+</html>
