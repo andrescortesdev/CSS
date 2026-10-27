@@ -68,7 +68,7 @@ function propertyValues(name,meta){
 }
 
 function propertyDemo(name,meta,value){
- if(name==='--*'){const lesson=lessons.find(l=>l.id==='variables');return {html:lesson.html,css:lesson.css.replace('#7951d8',value),note:'--* representa una familia, no un nombre literal válido. Este ejemplo usa --acento: define un valor con ese nombre y reutilízalo con var(--acento).'}}
+ if(name==='--*'){const lesson=lessons.find(l=>l.id==='variables');return {html:lesson.html,css:lesson.css.replace('#7951d8',value),selector:':root',property:'--acento',value,note:'--* representa una familia, no un nombre literal válido. Este ejemplo usa --acento: define un valor con ese nombre y reutilízalo con var(--acento).'}}
  const group=(meta.groups||[]).join(' ');let html=baseCard,selector='.demo';
  let base='.demo { padding: 22px; background: #f4eefb; border: 1px solid #e4d7f0; border-radius: 12px; }\nh2 { font-size: 22px; margin: 12px 0; }\np { font-size: 13px; line-height: 1.7; }\n.badge { font-size: 9px; letter-spacing: .13em; color: #9e83b9; }';
  let note='El selector .demo aplica la propiedad a la tarjeta. Cambia el valor, pulsa Ejecutar y compara con el estado inicial.';
@@ -151,7 +151,7 @@ function propertyDemo(name,meta,value){
  }
  if(name==='backdrop-filter')base+='\nbody { background: repeating-linear-gradient(45deg, #d8c4ed 0 15px, #edf5ef 15px 30px); }\n.demo { background: #ffffff66; }';
  if(/Speech|Paged Media|Fragmentation|Ruby|Anchor|View Transitions|Scroll-driven/.test(group))note+=' Esta familia puede requerir un medio, una estructura o una API adicional. Consulta las condiciones de uso en MDN; el reconocimiento de sintaxis no garantiza un efecto visible en este escenario.';
- return {html,css:`${base}\n\n/* Propiedad en estudio: cambia este valor */\n${selector} {\n  ${name}: ${value};\n}`,note};
+ return {html,css:`${base}\n\n/* Propiedad en estudio: cambia este valor */\n${selector} {\n  ${name}: ${value};\n}`,note,selector,property:name,value};
 }
 
 const selectMap={'Type selectors':'p','Class selectors':'.destacado','ID selectors':'#especial','Universal selectors':'*','Attribute selectors':'[data-tema]','Nesting selector':'&','Selector list':'h2, p','Next-sibling combinator':'h2 + p','Subsequent-sibling combinator':'h2 ~ p','Child combinator':'.grupo > p','Descendant combinator':'.grupo p','Pseudo-classes':'p:first-child','Pseudo-elements':'p::first-letter'};
@@ -176,7 +176,7 @@ function selectorDemo(name,meta){
  if(name==='Column combinator')selector='col || td';
  if(name==='Namespace separator')selector='svg|rect';
  if(name===':root')selector=':root';
- return {html,css:`${base}\n\n/* Selector en estudio */\n${selector} {\n  color: #7951d8;\n  background-color: #ede5fa;\n  outline: 1px solid #cbb6e3;\n}`,note};
+ return {html,css:`${base}\n\n/* Selector en estudio */\n${selector} {\n  color: #7951d8;\n  background-color: #ede5fa;\n  outline: 1px solid #cbb6e3;\n}`,note,selector};
 }
 
 const ruleLessons={'@container':'container-queries','@keyframes':'animaciones','@layer':'capas','@media':'media-queries','@page':'impresion','@property':'property','@scope':'scope','@supports':'supports'};

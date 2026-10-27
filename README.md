@@ -25,7 +25,7 @@ Para actualizarlo, modifica los archivos y súbelos a la misma rama. GitHub Page
 - Edita **styles.css** o **index.html** en el laboratorio y pulsa **Ejecutar**. También puedes usar **Ctrl + Enter**. Ambos lenguajes se aplican juntos; escribir no ejecuta los cambios automáticamente.
 - Alterna entre el ancho disponible y la vista compacta de **250px** para probar responsive.
 - Usa las explicaciones paso a paso, resuelve el reto y abre la pista cuando lo necesites. Marca las lecciones completadas para guardar tu progreso.
-- Abre **Referencia CSS** para buscar y filtrar **672 propiedades, 144 selectores, 19 reglas @ y 107 funciones**. Cada entrada incluye sintaxis, un laboratorio editable y un enlace a la documentación.
+- Abre **Referencia CSS** para buscar y filtrar **672 propiedades, 144 selectores, 19 reglas @ y 107 funciones**. Cada ficha explica para qué sirve, qué preparar antes de probar, cómo leer el ejemplo y qué errores evitar. Las propiedades incluyen una tabla de valores con botones para probarlos; las funciones explican sus argumentos. Hay retos con código de apoyo, lecciones y propiedades relacionadas, un diccionario básico y sintaxis completa opcional.
 - Abre **Playground** para experimentar libremente. Puedes descargar tu ejemplo como un HTML autónomo con sus estilos incluidos.
 - Usa **Ctrl + K** para buscar lecciones y entradas. El control de luna cambia el tema del sitio.
 
@@ -38,6 +38,7 @@ Para actualizarlo, modifica los archivos y súbelos a la misma rama. GitHub Page
 | `app.js` | Navegación, editores, búsqueda, progreso y exportación |
 | `lessons.js` | Ruta progresiva, ejemplos, retos y soluciones |
 | `reference.js` | Preparación de ejemplos y contextos de la referencia |
+| `learning.js` | Guías para principiantes, significado de valores, condiciones de uso, errores y ejercicios de referencia |
 | `descriptions.js` | Explicaciones en español de propiedades habituales |
 | `catalogs.js` | Catálogos incluidos como JavaScript clásico para funcionar también con doble clic |
 | `properties.json`, `selectors.json`, `at-rules.json`, `functions.json` | Copias de los datos originales de referencia; el sitio no los descarga al abrirse |
